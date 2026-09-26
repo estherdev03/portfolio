@@ -1,4 +1,4 @@
-interface ContainerProps extends React.ComponentPropsWithRef<"div"> {
+interface ContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
 }
 

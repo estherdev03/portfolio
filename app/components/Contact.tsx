@@ -1,11 +1,15 @@
-import { IoLocationOutline } from "react-icons/io5";
+"use client";
+import { IoCopyOutline, IoLocationOutline } from "react-icons/io5";
 import Container from "./Container";
 import { RiGithubLine } from "react-icons/ri";
 import { FiLinkedin } from "react-icons/fi";
 import { LuCalendarDays, LuSend } from "react-icons/lu";
 import { FaRegEnvelope } from "react-icons/fa6";
+import { useState } from "react";
 
 const Contact = () => {
+  const [copyEmail, setCopyEmail] = useState(false);
+
   return (
     <Container id="contact">
       <div className="w-3/5 ">
@@ -33,11 +37,12 @@ const Contact = () => {
                   >
                     Email Address
                   </label>
-                  <input
-                    type="text"
-                    className=" p-1 rounded-md w-full mt-1 text-sm h-10 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
-                    defaultValue="esthertrandev@gmail.com"
-                  />
+                  <div className=" p-1 rounded-md w-full text-sm mt-1 h-12 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3 flex items-center justify-between">
+                    <div>esthertrandev@gmail.com</div>
+                    <div className="cursor-pointer hover:bg-neutral-700/60 p-1.5 rounded-md">
+                      <IoCopyOutline className=" text-lg" />
+                    </div>
+                  </div>
                 </div>
                 <div className="uppercase font-light text-xs text-neutral-300 mt-5">
                   Location & Relocation

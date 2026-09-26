@@ -1,10 +1,18 @@
 import Link from "next/link";
+import React from "react";
 
-const NavLink = ({ name, href }: { name: string; href: string }) => {
+interface NavLinkProps extends React.ComponentPropsWithoutRef<"a"> {
+  name: string;
+  href: string;
+  isActive?: boolean;
+}
+
+const NavLink = ({ name, href, isActive, ...rest }: NavLinkProps) => {
   return (
     <Link
-      className="hover:bg-neutral-900/90 backdrop-blur-md hover: cursor-pointer w-fit h-fit px-4 py-1 rounded-sm"
+      className={`hover:bg-neutral-800/90 hover: cursor-pointer w-fit h-fit px-4 py-1 rounded-lg ${isActive ? "bg-neutral-800/90 backdrop-blur-md " : ""}`}
       href={href}
+      {...rest}
     >
       {name}
     </Link>

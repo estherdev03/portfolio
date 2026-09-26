@@ -1,8 +1,16 @@
+"use client";
 import { IoMdArrowUp } from "react-icons/io";
 import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="flex items-center justify-center py-6 bg-neutral-900">
       <div className="w-3/5">
@@ -17,7 +25,10 @@ const Footer = () => {
             <LuGithub className="cursor-pointer" />
             <LuLinkedin className="cursor-pointer" />
             <MdOutlineMailOutline className="cursor-pointer" />
-            <div className="flex items-center gap-1 text-sm font-light border border-neutral-800 px-2 py-1 rounded-md cursor-pointer">
+            <div
+              className="flex items-center gap-1 text-sm font-light border border-neutral-800 px-2 py-1 rounded-md cursor-pointer"
+              onClick={() => scrollToTop()}
+            >
               <div>Top</div>
               <IoMdArrowUp />
             </div>
