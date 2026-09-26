@@ -4,11 +4,28 @@ import Container from "./Container";
 import { RiGithubLine } from "react-icons/ri";
 import { FiLinkedin } from "react-icons/fi";
 import { LuCalendarDays, LuSend } from "react-icons/lu";
-import { FaRegEnvelope } from "react-icons/fa6";
-import { useState } from "react";
+import { FaCheck, FaRegEnvelope } from "react-icons/fa6";
+import { useRef, useState } from "react";
 
 const Contact = () => {
-  const [copyEmail, setCopyEmail] = useState(false);
+  const emailAddressRef = useRef<HTMLDivElement>(null);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    if (emailAddressRef.current) {
+      try {
+        const copiedEmail = emailAddressRef.current.textContent;
+        await navigator.clipboard.writeText(copiedEmail);
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
+      } catch (error) {
+        console.log(`Cannot copied: ${error}`);
+      }
+    }
+  };
 
   return (
     <Container id="contact">
@@ -38,9 +55,16 @@ const Contact = () => {
                     Email Address
                   </label>
                   <div className=" p-1 rounded-md w-full text-sm mt-1 h-12 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3 flex items-center justify-between">
-                    <div>esthertrandev@gmail.com</div>
-                    <div className="cursor-pointer hover:bg-neutral-700/60 p-1.5 rounded-md">
-                      <IoCopyOutline className=" text-lg" />
+                    <div ref={emailAddressRef}>esthertrandev@gmail.com</div>
+                    <div
+                      className={`cursor-pointer hover:bg-neutral-700/60 p-1.5 rounded-md ${isCopied ? "pointer-events-none cursor-not-allowed" : ""}`}
+                      onClick={copyToClipboard}
+                    >
+                      {isCopied ? (
+                        <FaCheck className=" text-green-500 text-lg" />
+                      ) : (
+                        <IoCopyOutline className=" text-lg" />
+                      )}
                     </div>
                   </div>
                 </div>

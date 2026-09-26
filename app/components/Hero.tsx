@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FiLinkedin } from "react-icons/fi";
 import {
@@ -9,6 +10,11 @@ import { MdOutlineSchool } from "react-icons/md";
 import { RiGithubLine } from "react-icons/ri";
 
 const Hero = () => {
+  const projectNavigateHandler = () => {
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <div
       className="h-full flex flex-col justify-center items-center py-32 border-b border-neutral-800/80"
@@ -52,14 +58,15 @@ const Hero = () => {
         </div>
         <div>
           <div className="flex items-center gap-7">
-            <Link
-              href="#projects"
+            <div
               className="flex items-center gap-2 bg-white w-fit h-fit px-5 py-2 text-black rounded-lg"
+              onClick={projectNavigateHandler}
             >
-              Explore projects <IoArrowDownOutline />
-            </Link>
-            <div className="flex items-center gap-2 bg-white w-fit h-fit px-5 py-2 text-black rounded-lg">
-              <IoNewspaperOutline /> View Resume
+              <span>Explore projects</span>
+              <IoArrowDownOutline />
+            </div>
+            <div className="flex items-center gap-2 bg-white w-fit h-fit px-5 py-2 text-black rounded-lg cursor-pointer">
+              <IoNewspaperOutline /> <span>View Resume</span>
             </div>
             <Link href="#contact" className="text-gray-400">
               Get in touch

@@ -5,31 +5,12 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 
 const NavLinks = [
-  {
-    name: "About",
-    href: "/#about",
-  },
-  {
-    name: "Education",
-    href: "/#education",
-  },
-
-  {
-    name: "Skills",
-    href: "/#skills",
-  },
-  {
-    name: "Projects",
-    href: "/#projects",
-  },
-  {
-    name: "Principles",
-    href: "/#principles",
-  },
-  {
-    name: "Contact",
-    href: "/#contact",
-  },
+  "About",
+  "Education",
+  "Skills",
+  "Projects",
+  "Principles",
+  "Contact",
 ];
 
 const NavBar = () => {
@@ -87,10 +68,16 @@ const NavBar = () => {
     };
   }, []);
 
+  const navigationHandler = ({ section_id }: { section_id: string }) => {
+    return document.getElementById(section_id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="flex items-center justify-between h-18 px-4 border-b border-neutral-800/80 fixed left-0 top-0 z-100 w-full bg-neutral-900/90 ">
-      <Link className="flex items-center cursor-pointer" href="/#about">
-        <div className="w-10 h-10 bg-white rounded-md flex items-center justify-center">
+      <Link className="flex items-center cursor-pointer gap-2" href="/#about">
+        <div className="w-10 h-10 bg-white rounded-md flex ritems-center justify-center text-black">
           ET
         </div>
         <div className="w-fit text-white ml-2 font-semibold text-md">
@@ -98,12 +85,12 @@ const NavBar = () => {
         </div>
       </Link>
       <div className="w-1/2 text-white flex items-center justify-center gap-2">
-        {NavLinks.map(({ name, href }) => {
+        {NavLinks.map((name) => {
           return (
             <NavLink
               key={name}
               name={name}
-              href={href}
+              navigationHandler={navigationHandler}
               isActive={name.toUpperCase() == activeSection.toUpperCase()}
             />
           );
