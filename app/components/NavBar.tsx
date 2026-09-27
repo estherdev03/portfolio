@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import NavLink from "./NavLink";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
@@ -75,15 +74,20 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between h-18 px-4 border-b border-neutral-800/80 fixed left-0 top-0 z-100 w-full bg-neutral-900/90 ">
-      <Link className="flex items-center cursor-pointer gap-2" href="/#about">
-        <div className="w-10 h-10 bg-white rounded-md flex ritems-center justify-center text-black">
+    <div className="flex items-center justify-between h-18 px-4 border-b border-neutral-800/80 fixed left-0 top-0 z-30 w-full bg-neutral-900/90 ">
+      <div
+        className="flex items-center cursor-pointer gap-0.5"
+        onClick={() => {
+          navigationHandler({ section_id: "about" });
+        }}
+      >
+        <div className="w-10 h-10 bg-white rounded-md flex items-center justify-center text-black">
           ET
         </div>
         <div className="w-fit text-white ml-2 font-semibold text-md">
           Esther Tran
         </div>
-      </Link>
+      </div>
       <div className="w-1/2 text-white flex items-center justify-center gap-2">
         {NavLinks.map((name) => {
           return (

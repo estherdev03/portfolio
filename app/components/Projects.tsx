@@ -1,6 +1,15 @@
+"use client";
 import TechTag from "./TechTag";
 import ProjectCard from "./ProjectCard";
 import Container from "./Container";
+import ProjectDetailModal, { ProjectDetailProps } from "./ProjectDetailModal";
+import { useEffect, useState } from "react";
+
+export enum ProjectName {
+  maplepath = "maplepath",
+  pomodoro = "pomodoro",
+  canva_clone = "canva_clone",
+}
 
 const Projects = () => {
   // ------ MaplePath -----
@@ -177,54 +186,283 @@ const Projects = () => {
     </>
   );
 
+  // Project Detail List for Project Detail Modal
+  const ProjectsDetailList: {
+    maplepath: ProjectDetailProps;
+    pomodoro: ProjectDetailProps;
+    canva_clone: ProjectDetailProps;
+  } = {
+    maplepath: {
+      main_tag: "AI & RAG",
+      secondary_tag: "Featured Architecture",
+      title: "MaplePath AI",
+      description: `Production AI Express Entry assistant: LangGraph multi-step
+          orchestration, hybrid search (BM25 + pgvector + Cohere), and
+          deterministic CRS scoring`,
+      techTags: (
+        <>
+          <TechTag>Python 3.12</TechTag>
+          <TechTag>LangGraph</TechTag>
+          <TechTag>FastAPI</TechTag>
+          <TechTag>pgvector</TechTag>
+          <TechTag>PostgreSQL</TechTag>
+          <TechTag>Cohere Rerank</TechTag>
+          <TechTag>NextJS</TechTag>
+          <TechTag>Docker</TechTag>
+          <TechTag>pytest</TechTag>
+        </>
+      ),
+      category: (
+        <>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>NDCG@10 Benchmark</div>
+            <div>Retrieval Eval</div>
+          </div>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>LangGraph State</div>
+            <div>Orchestration</div>
+          </div>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>100% Auditable CRS</div>
+            <div>Scoring Engine</div>
+          </div>
+        </>
+      ),
+      architect: ` Decouples probabilistic AI capabilities from regulatory immigration
+            rules. The FastAPI backend orchestrates a LangGraph state machine:
+            unstructured user text is parsed into typed Pydantic models with
+            constrained field extraction; candidate NOC 2021 job unit groups are
+            retrieved via hybrid BM25 + pgvector search and reranked; LLM
+            chooses strictly among retrieved official candidate groups to
+            prevent hallucinations; and pure Python rule engines
+            deterministically calculate CRS points and eligibility.`,
+      technical: (
+        <>
+          <li>
+            Eliminating LLM hallucination of non-existent Canadian NOC job codes
+            (resolved by passing candidate context strictly from the hybrid
+            retrieval layer and forcing the model to select from candidates).
+          </li>
+          <li>
+            Handling complex official language test score conversions across 5
+            distinct testing systems (IELTS, CELPIP, PTE, TEF, TCF) into
+            Canadian Language Benchmarks (CLB / NCLC).
+          </li>
+          <li>
+            Benchmarking and tuning hybrid search parameters (BM25 weights,
+            vector distance metrics, RRF constant k) against ground-truth
+            evaluation sets using NDCG@10.
+          </li>
+        </>
+      ),
+      testing: `Comprehensive automated pytest test suite mirroring backend
+            architecture (tests/), validating graph routing transitions,
+            deterministic CRS point conversions, and retrieval ranking
+            benchmarks.`,
+      takeaway: ` Mastered modern agentic workflow patterns with LangGraph, hybrid
+              vector + keyword retrieval, and the crucial software engineering
+              practice of isolating AI reasoning from auditable deterministic
+              business logic.`,
+      github_url: "",
+      demo_url: "",
+    },
+    pomodoro: {
+      main_tag: "Backend & Security",
+      secondary_tag: "Production Deployed",
+      title: "Pomodoro App",
+      description: `Full-stack productivity & session tracking system with 2FA (TOTP), multi-provider OAuth2, and containerized PostgreSQL`,
+      techTags: (
+        <>
+          <TechTag>TypeScript</TechTag>
+          <TechTag>NextJS</TechTag>
+          <TechTag>React</TechTag>
+          <TechTag>NestJS</TechTag>
+          <TechTag>PostgreSQL</TechTag>
+          <TechTag>TypeORM</TechTag>
+          <TechTag>Docker</TechTag>
+          <TechTag>2FA (TOTP)</TechTag>
+          <TechTag>Zustand</TechTag>
+          <TechTag>TailwindCSS</TechTag>
+          <TechTag>PassportJS</TechTag>
+        </>
+      ),
+      category: (
+        <>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>2FA (TOTP) + OAuth2</div>
+            <div>Authentication</div>
+          </div>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>NestJS + TypeORM</div>
+            <div>Backend API</div>
+          </div>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>Vercel + Railway</div>
+            <div>Deployment</div>
+          </div>
+        </>
+      ),
+      architect: `Designed with a clean decoupled client-server architecture. The NestJS backend provides specialized modular services (auth, users, pomodoro-session) communicating with PostgreSQL through TypeORM entities. The Next.js frontend interacts via a type-safe HTTP client with automatic token refreshing and Zustand global state management.`,
+      technical: (
+        <>
+          <li>
+            Implementing secure Two-Factor Authentication (TOTP) lifecycle:
+            secret generation, QR code generation, provisional secret
+            verification, and permanent activation.
+          </li>
+          <li>
+            Synchronizing active session timers between client state and server
+            database records to prevent session loss on page refresh or network
+            interruption.
+          </li>
+          <li>
+            Managing cross-origin cookie authentication and OAuth callback
+            redirection between Vercel frontend and Railway backend domains.
+          </li>
+        </>
+      ),
+      testing: `Controller unit tests and integration tests in NestJS using Jest (app.controller.spec.ts), paired with strict Zod validation on all API payloads.`,
+      takeaway: ` Deepened proficiency in NestJS dependency injection patterns, enterprise auth protocols (TOTP, OAuth2, JWT), and deploying full-stack containerized applications to cloud platforms.`,
+      github_url: "",
+      demo_url: "",
+    },
+    canva_clone: {
+      main_tag: "Full Stack & Graphics",
+      secondary_tag: "Live Interactive App",
+      title: "Live Interactive App",
+      description: `Full-stack browser graphic design tool with multi-layer canvas editor, Cloudinary cloud asset storage & Google OAuth`,
+      techTags: (
+        <>
+          <TechTag>React</TechTag>
+          <TechTag>NodeJS</TechTag>
+          <TechTag>Express</TechTag>
+          <TechTag>MongoDB</TechTag>
+          <TechTag>Mongoose</TechTag>
+          <TechTag>TailwindCSS</TechTag>
+          <TechTag>Cloudinary API</TechTag>
+          <TechTag>PassportJS</TechTag>
+          <TechTag>html-to-image</TechTag>
+        </>
+      ),
+      category: (
+        <>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>Multi-Layer HTML5</div>
+            <div>Canvas State</div>
+          </div>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>Cloudinary</div>
+            <div>Cloud Assets</div>
+          </div>
+          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+            <div>Vercel + Atlas</div>
+            <div>Deployment</div>
+          </div>
+        </>
+      ),
+      architect: `Powered by a MERN stack architecture with Express 5 REST endpoints managing user projects, design state documents, and Cloudinary image signatures. The React 19 frontend manages active canvas state (elements array, selected element, bounding boxes, layers) and renders modifications with sub-millisecond responsiveness.`,
+      technical: (
+        <>
+          <li>
+            Managing complex nested element manipulation state (coordinates,
+            rotation, scale, z-index ordering) without causing full canvas
+            re-render lag.
+          </li>
+          <li>
+            Securely proxying and handling authenticated Cloudinary media
+            uploads with secret signing.
+          </li>
+          <li>
+            Synchronizing canvas state persistence to MongoDB while supporting
+            seamless template instantiation.
+          </li>
+        </>
+      ),
+      testing: `Manual end-to-end validation of OAuth redirection flows, canvas element boundary collisions, and export rendering fidelity across different browser viewports.`,
+      takeaway: `Gained extensive experience in state management for graphical canvas interfaces, third-party cloud media SDK integrations, and modern full-stack JavaScript architectures.`,
+      github_url: "",
+      demo_url: "",
+    },
+  };
+
+  const [showDetailModal, setShowDetailModal] = useState(false);
+  const [projectDetail, setProjectDetail] = useState<ProjectDetailProps>(
+    ProjectsDetailList["maplepath"], //Maplepath is the default detail
+  );
+
+  const openModal = (projectName: ProjectName) => {
+    setProjectDetail({ ...ProjectsDetailList[projectName] });
+    setShowDetailModal(true);
+  };
+
+  const closeModal = () => {
+    setShowDetailModal(false);
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", showDetailModal);
+    return () => document.body.classList.remove("overflow-hidden"); //clean up
+  }, [showDetailModal]);
+
   return (
-    <Container id="projects">
-      <div className="w-3/5 flex flex-col gap-10">
-        <div className="text-5xl font-semibold pb-4">Featured Projects</div>
-        <ProjectCard
-          mainHeader="AI & RAG"
-          secondaryHeader="Featured Architecture"
-          title="MaplePath"
-          description="Production AI Express Entry assistant: LangGraph multi-step
+    <>
+      <Container id="projects">
+        <div className="w-3/5 flex flex-col gap-10">
+          <div className="text-5xl font-semibold pb-4">Featured Projects</div>
+          <ProjectCard
+            id={ProjectName.maplepath}
+            mainHeader="AI & RAG"
+            secondaryHeader="Featured Architecture"
+            title="MaplePath"
+            description="Production AI Express Entry assistant: LangGraph multi-step
               orchestration, hybrid search (BM25 + pgvector + Cohere), and
               deterministic CRS scoring"
-          githubRepo="#"
-          detail="An intelligent, auditable immigration assistant for Canada's
+            githubRepo="#"
+            detail="An intelligent, auditable immigration assistant for Canada's
           Express Entry skilled immigration system. Converts applicant natural
           language into validated profile schemas, retrieves and classifies NOC
           2021 occupation codes with hybrid search, and deterministically
           computes Comprehensive Ranking System (CRS) points and FSW/CEC/FST
           eligibility."
-          features={maplePathFeatures}
-          techtags={maplePathTechTags}
-          benchmark={maplePathBenchmark}
-        />
-        <ProjectCard
-          mainHeader="Backend & Security"
-          secondaryHeader="Production Deployed"
-          title="Pomodoro App"
-          description="Full-stack productivity & session tracking system with 2FA (TOTP), multi-provider OAuth2, and containerized PostgreSQL"
-          githubRepo="#"
-          detail="A full-stack productivity web application built around the Pomodoro technique. Delivers structured focus session tracking, 
+            features={maplePathFeatures}
+            techtags={maplePathTechTags}
+            benchmark={maplePathBenchmark}
+            handleClick={openModal}
+          />
+          <ProjectCard
+            id={ProjectName.pomodoro}
+            mainHeader="Backend & Security"
+            secondaryHeader="Production Deployed"
+            title="Pomodoro App"
+            description="Full-stack productivity & session tracking system with 2FA (TOTP), multi-provider OAuth2, and containerized PostgreSQL"
+            githubRepo="#"
+            detail="A full-stack productivity web application built around the Pomodoro technique. Delivers structured focus session tracking, 
           short & long break intervals, persistent session history, and enterprise-grade security including JWT authentication, two-factor 
           authentication (TOTP), and Google/GitHub OAuth2."
-          features={pomodoroFeatures}
-          techtags={pomodoroTechTags}
-          benchmark={pomodoroBenchmark}
-        />
-        <ProjectCard
-          mainHeader="Full Stack & Graphics"
-          secondaryHeader="Live Interactive App"
-          title="Canva Clone (MERN Canva)"
-          description="Full-stack browser graphic design tool with multi-layer canvas editor, Cloudinary cloud asset storage & Google OAuth"
-          githubRepo="#"
-          detail="An interactive full-stack graphic design platform inspired by Canva. Features a rich visual canvas workspace for composing multi-element graphics with custom text, geometric shapes, and cloud-stored images, alongside template browsing and instant client-side image rendering export."
-          features={canvaFeatures}
-          techtags={canvaTechTags}
-          benchmark={canvaBenchmark}
-        />
-      </div>
-    </Container>
+            features={pomodoroFeatures}
+            techtags={pomodoroTechTags}
+            benchmark={pomodoroBenchmark}
+            handleClick={openModal}
+          />
+          <ProjectCard
+            id={ProjectName.canva_clone}
+            mainHeader="Full Stack & Graphics"
+            secondaryHeader="Live Interactive App"
+            title="Canva Clone (MERN Canva)"
+            description="Full-stack browser graphic design tool with multi-layer canvas editor, Cloudinary cloud asset storage & Google OAuth"
+            githubRepo="#"
+            detail="An interactive full-stack graphic design platform inspired by Canva. Features a rich visual canvas workspace for composing multi-element graphics with custom text, geometric shapes, and cloud-stored images, alongside template browsing and instant client-side image rendering export."
+            features={canvaFeatures}
+            techtags={canvaTechTags}
+            benchmark={canvaBenchmark}
+            handleClick={openModal}
+          />
+        </div>
+      </Container>
+      {showDetailModal && (
+        <ProjectDetailModal {...projectDetail} closeModal={closeModal} />
+      )}
+    </>
   );
 };
 

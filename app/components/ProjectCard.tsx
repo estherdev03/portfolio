@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { FiGithub, FiLayers } from "react-icons/fi";
+import { ProjectName } from "./Projects";
 
 const ProjectCard = ({
+  id,
   mainHeader,
   secondaryHeader,
   title,
@@ -11,7 +13,9 @@ const ProjectCard = ({
   features,
   techtags,
   benchmark,
+  handleClick,
 }: {
+  id: ProjectName;
   mainHeader: string;
   secondaryHeader: string;
   title: string;
@@ -21,6 +25,7 @@ const ProjectCard = ({
   features: React.ReactNode;
   techtags: React.ReactNode;
   benchmark: React.ReactNode;
+  handleClick: (projectName: ProjectName) => void;
 }) => {
   return (
     <div className="border border-neutral-800 bg-neutral-900 p-6 rounded-lg">
@@ -31,7 +36,7 @@ const ProjectCard = ({
               <div className="w-fit h-fit px-3 rounded-xl text-sm items-center bg-neutral-800 text-neutral-300 py-0.5">
                 {mainHeader}
               </div>
-              <div className="w-fit h-fit px-3 border border-emerald-800/80 rounded-xl text-sm items-center text-emerald-300 bg-emerald-950/60">
+              <div className="w-fit h-fit px-3 py-0.5 border border-emerald-800/80 rounded-xl text-sm items-center text-emerald-300 bg-emerald-950/60">
                 {secondaryHeader}
               </div>
             </div>
@@ -59,7 +64,12 @@ const ProjectCard = ({
       </div>
       <div className="flex items-center mt-5 space-x-5">
         <div className=" flex items-center gap-2 flex-wrap">{techtags}</div>
-        <div className="flex items-center gap-2 bg-white px-4 py-2 text-neutral-900 rounded-md cursor-pointer">
+        <div
+          className="flex items-center gap-2 bg-white px-4 py-2 text-neutral-900 rounded-md cursor-pointer"
+          onClick={() => {
+            handleClick(id);
+          }}
+        >
           <FiLayers />
           <div className=" whitespace-nowrap text-sm">Architecture & Specs</div>
         </div>
