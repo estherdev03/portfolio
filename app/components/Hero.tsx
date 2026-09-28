@@ -59,7 +59,7 @@ const Hero = () => {
         <div>
           <div className="flex items-center gap-7">
             <div
-              className="flex items-center gap-2 bg-white w-fit h-fit px-5 py-2 text-black rounded-lg"
+              className="flex items-center gap-2 bg-white w-fit h-fit px-5 py-2 text-black rounded-lg cursor-pointer"
               onClick={projectNavigateHandler}
             >
               <span>Explore projects</span>

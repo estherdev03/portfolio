@@ -3,9 +3,11 @@ import { IoCopyOutline, IoLocationOutline } from "react-icons/io5";
 import Container from "./Container";
 import { RiGithubLine } from "react-icons/ri";
 import { FiLinkedin } from "react-icons/fi";
-import { LuCalendarDays, LuSend } from "react-icons/lu";
+import { LuCalendarDays } from "react-icons/lu";
 import { FaCheck, FaRegEnvelope } from "react-icons/fa6";
 import { useRef, useState } from "react";
+import ContactForm from "./ContactForm";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const emailAddressRef = useRef<HTMLDivElement>(null);
@@ -21,6 +23,14 @@ const Contact = () => {
         setTimeout(() => {
           setIsCopied(false);
         }, 2000);
+        toast.success("Copy successfully 👍", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          progress: undefined,
+          theme: "dark",
+        });
       } catch (error) {
         console.log(`Cannot copied: ${error}`);
       }
@@ -102,51 +112,7 @@ const Contact = () => {
             </div>
 
             <div className="col-span-3 border border-neutral-800 bg-neutral-900 p-6 rounded-xl">
-              <form
-                action=""
-                className="flex flex-col flex-1 h-full justify-between"
-              >
-                <div className=" grid grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="" className="text-xs capitalize">
-                      Your name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="p-1 rounded-md w-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="" className=" text-xs capitalize">
-                      Your email <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="p-1 rounded-md w-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="" className=" text-xs capitalize">
-                    Company / Organization (Optional)
-                  </label>
-                  <input
-                    type="text"
-                    className="p-1 rounded-md w-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="" className=" text-xs capitalize">
-                    Message / Role Details{" "}
-                    <span className="text-red-500">*</span>
-                  </label>
-                  <textarea className=" p-1 rounded-md w-full mb-5 h-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3" />
-                </div>
-                <button className="bg-white text-black w-full rounded-md py-2 flex items-center justify-center gap-2 mt-12 cursor-pointer">
-                  <LuSend />
-                  <span>Send Inquiry</span>
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
