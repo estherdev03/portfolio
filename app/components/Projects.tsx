@@ -2,6 +2,7 @@
 import TechTag from "./TechTag";
 import ProjectCard from "./ProjectCard";
 import Container from "./Container";
+import SectionHeading from "./SectionHeading";
 import ProjectDetailModal, { ProjectDetailProps } from "./ProjectDetailModal";
 import { useEffect, useState } from "react";
 
@@ -54,17 +55,17 @@ const Projects = () => {
   );
   const maplePathBenchmark = (
     <>
-      <div className="text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className="text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
-      <div className=" text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className=" text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
-      <div className=" text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className=" text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
     </>
   );
@@ -114,17 +115,17 @@ const Projects = () => {
   );
   const pomodoroBenchmark = (
     <>
-      <div className="text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className="text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
-      <div className=" text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className=" text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
-      <div className=" text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className=" text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
     </>
   );
@@ -171,17 +172,17 @@ const Projects = () => {
   );
   const canvaBenchmark = (
     <>
-      <div className="text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className="text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
-      <div className=" text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className=" text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
-      <div className=" text-center">
+      <div className="highlight-tile">
         <div>NDCG@10 Benchmark</div>
-        <div className=" text-sm">Retrieval Eval</div>
+        <div>Retrieval Eval</div>
       </div>
     </>
   );
@@ -214,15 +215,15 @@ const Projects = () => {
       ),
       category: (
         <>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>NDCG@10 Benchmark</div>
             <div>Retrieval Eval</div>
           </div>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>LangGraph State</div>
             <div>Orchestration</div>
           </div>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>100% Auditable CRS</div>
             <div>Scoring Engine</div>
           </div>
@@ -263,7 +264,7 @@ const Projects = () => {
               vector + keyword retrieval, and the crucial software engineering
               practice of isolating AI reasoning from auditable deterministic
               business logic.`,
-      github_url: "",
+      github_url: "https://github.com/estherdev03/MaplePath",
       demo_url: "",
     },
     pomodoro: {
@@ -288,15 +289,15 @@ const Projects = () => {
       ),
       category: (
         <>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>2FA (TOTP) + OAuth2</div>
             <div>Authentication</div>
           </div>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>NestJS + TypeORM</div>
             <div>Backend API</div>
           </div>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>Vercel + Railway</div>
             <div>Deployment</div>
           </div>
@@ -323,8 +324,8 @@ const Projects = () => {
       ),
       testing: `Controller unit tests and integration tests in NestJS using Jest (app.controller.spec.ts), paired with strict Zod validation on all API payloads.`,
       takeaway: ` Deepened proficiency in NestJS dependency injection patterns, enterprise auth protocols (TOTP, OAuth2, JWT), and deploying full-stack containerized applications to cloud platforms.`,
-      github_url: "",
-      demo_url: "",
+      github_url: "https://github.com/estherdev03/pomodoro-app",
+      demo_url: "https://pomodoro-murex-beta.vercel.app",
     },
     canva_clone: {
       main_tag: "Full Stack & Graphics",
@@ -346,15 +347,15 @@ const Projects = () => {
       ),
       category: (
         <>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>Multi-Layer HTML5</div>
             <div>Canvas State</div>
           </div>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>Cloudinary</div>
             <div>Cloud Assets</div>
           </div>
-          <div className="border border-neutral-600 text-center py-4 rounded-lg bg-neutral-800">
+          <div className="stat-tile">
             <div>Vercel + Atlas</div>
             <div>Deployment</div>
           </div>
@@ -380,8 +381,8 @@ const Projects = () => {
       ),
       testing: `Manual end-to-end validation of OAuth redirection flows, canvas element boundary collisions, and export rendering fidelity across different browser viewports.`,
       takeaway: `Gained extensive experience in state management for graphical canvas interfaces, third-party cloud media SDK integrations, and modern full-stack JavaScript architectures.`,
-      github_url: "",
-      demo_url: "",
+      github_url: "https://github.com/estherdev03/mern-canva",
+      demo_url: "https://mern-canva-navy.vercel.app",
     },
   };
 
@@ -407,8 +408,8 @@ const Projects = () => {
   return (
     <>
       <Container id="projects">
-        <div className="w-3/5 flex flex-col gap-10">
-          <div className="text-5xl font-semibold pb-4">Featured Projects</div>
+        <SectionHeading eyebrow="03 / Projects" title="Featured Projects" />
+        <div className="flex flex-col gap-6">
           <ProjectCard
             id={ProjectName.maplepath}
             mainHeader="AI & RAG"
@@ -417,7 +418,8 @@ const Projects = () => {
             description="Production AI Express Entry assistant: LangGraph multi-step
               orchestration, hybrid search (BM25 + pgvector + Cohere), and
               deterministic CRS scoring"
-            githubRepo="#"
+            githubRepo="https://github.com/estherdev03/MaplePath"
+            demoUrl="#"
             detail="An intelligent, auditable immigration assistant for Canada's
           Express Entry skilled immigration system. Converts applicant natural
           language into validated profile schemas, retrieves and classifies NOC
@@ -435,7 +437,8 @@ const Projects = () => {
             secondaryHeader="Production Deployed"
             title="Pomodoro App"
             description="Full-stack productivity & session tracking system with 2FA (TOTP), multi-provider OAuth2, and containerized PostgreSQL"
-            githubRepo="#"
+            githubRepo="https://github.com/estherdev03/pomodoro-app"
+            demoUrl="https://pomodoro-murex-beta.vercel.app"
             detail="A full-stack productivity web application built around the Pomodoro technique. Delivers structured focus session tracking, 
           short & long break intervals, persistent session history, and enterprise-grade security including JWT authentication, two-factor 
           authentication (TOTP), and Google/GitHub OAuth2."
@@ -450,7 +453,8 @@ const Projects = () => {
             secondaryHeader="Live Interactive App"
             title="Canva Clone (MERN Canva)"
             description="Full-stack browser graphic design tool with multi-layer canvas editor, Cloudinary cloud asset storage & Google OAuth"
-            githubRepo="#"
+            githubRepo="https://github.com/estherdev03/mern-canva"
+            demoUrl="https://mern-canva-navy.vercel.app"
             detail="An interactive full-stack graphic design platform inspired by Canva. Features a rich visual canvas workspace for composing multi-element graphics with custom text, geometric shapes, and cloud-stored images, alongside template browsing and instant client-side image rendering export."
             features={canvaFeatures}
             techtags={canvaTechTags}

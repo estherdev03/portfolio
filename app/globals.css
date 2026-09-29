@@ -1,1 +1,112 @@
 @import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-jakarta), var(--font-geist), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #fafafa;
+}
+
+::selection {
+  background: #065f46;
+  color: #fff;
+}
+
+@keyframes et-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer components {
+  /* Numbered rows (01, 02, …) for feature / hurdle lists */
+  .numbered-list {
+    counter-reset: item;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .numbered-list > li {
+    counter-increment: item;
+    display: flex;
+    gap: 14px;
+  }
+  .numbered-list > li::before {
+    content: counter(item, decimal-leading-zero);
+    flex: none;
+    padding-top: 3px;
+    font-family: var(--font-mono);
+    font-size: var(--number-size, 11px);
+    color: #6ee7b7;
+  }
+
+  /* Project card highlight tile: value first in markup, label shown on top */
+  .highlight-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px 18px;
+    border: 1px solid #262626;
+    background: #151515;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: #fafafa;
+  }
+  .highlight-tile::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 2px;
+    background: #10b981;
+  }
+  .highlight-tile > div:last-child {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    color: #737373;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  /* Modal stat tile: value above, small mono label below */
+  .stat-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .stat-tile > div:last-child {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    color: #737373;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}

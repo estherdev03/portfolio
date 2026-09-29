@@ -32,7 +32,7 @@ const ContactForm = () => {
   return (
     <form
       action=""
-      className="flex flex-col h-full gap-4"
+      className="flex flex-col h-full gap-4.5"
       onSubmit={(e) => {
         toast.promise(
           handleSubmit(e),
@@ -52,75 +52,74 @@ const ContactForm = () => {
         );
       }}
     >
-      <div className=" grid grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="name" className="text-xs capitalize">
-            Your name <span className="text-red-500">*</span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4.5">
+        <div className="flex flex-col gap-1.5 text-[13px] text-neutral-300">
+          <label htmlFor="name">
+            Your name <span className="text-red-400">*</span>
           </label>
           <input
             type="text"
             name="name"
             id="name"
-            className="p-1 rounded-md w-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
+            autoComplete="name"
+            className={`h-11 rounded-[9px] w-full border bg-neutral-800/50 text-neutral-50 px-3.5 text-[15px] outline-none focus:border-neutral-400 transition-colors ${status?.error["name"] ? "border-red-400" : "border-[#333]"}`}
           />
           {!status?.success && status?.error["name"] && (
-            <div className="text-red-500 text-xs mt-1">
-              {status?.error["name"]}
-            </div>
+            <div className="text-red-400 text-xs">{status?.error["name"]}</div>
           )}
         </div>
-        <div>
-          <label htmlFor="email" className=" text-xs capitalize">
-            Your email <span className="text-red-500">*</span>
+        <div className="flex flex-col gap-1.5 text-[13px] text-neutral-300">
+          <label htmlFor="email">
+            Your email <span className="text-red-400">*</span>
           </label>
           <input
             type="text"
             name="email"
             id="email"
-            className="p-1 rounded-md w-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
+            autoComplete="email"
+            className={`h-11 rounded-[9px] w-full border bg-neutral-800/50 text-neutral-50 px-3.5 text-[15px] outline-none focus:border-neutral-400 transition-colors ${status?.error["email"] ? "border-red-400" : "border-[#333]"}`}
           />
           {!status?.success && status?.error["email"] && (
-            <div className="text-red-500 text-xs mt-1">
-              {status?.error["email"]}
-            </div>
+            <div className="text-red-400 text-xs">{status?.error["email"]}</div>
           )}
         </div>
       </div>
-      <div>
-        <label htmlFor="company" className=" text-xs capitalize">
-          Company / Organization (Optional)
+      <div className="flex flex-col gap-1.5 text-[13px] text-neutral-300">
+        <label htmlFor="company">
+          Company / Organization{" "}
+          <span className="text-neutral-500">(Optional)</span>
         </label>
         <input
           type="text"
           name="company"
           id="company"
-          className="p-1 rounded-md w-full mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
+          autoComplete="organization"
+          className="h-11 rounded-[9px] w-full border bg-neutral-800/50 text-neutral-50 px-3.5 text-[15px] outline-none focus:border-neutral-400 transition-colors border-[#333]"
         />
       </div>
-      <div className="flex flex-col flex-1">
-        <label htmlFor="message" className=" text-xs capitalize">
-          Message / Role Details <span className="text-red-500">*</span>
+      <div className="flex flex-col gap-1.5 text-[13px] text-neutral-300 flex-1">
+        <label htmlFor="message">
+          Message / Role Details <span className="text-red-400">*</span>
         </label>
         <textarea
           name="message"
           id="message"
-          className=" p-1 rounded-md w-full flex-1 min-h-32 resize-none mt-0.5 border border-neutral-600 bg-neutral-800/60 text-neutral-300 px-3"
+          className={`flex-1 min-h-37.5 resize-y rounded-[9px] w-full border bg-neutral-800/50 text-neutral-50 px-3.5 py-3 text-[15px] leading-normal outline-none focus:border-neutral-400 transition-colors ${status?.error["message"] ? "border-red-400" : "border-[#333]"}`}
         />
         {!status?.success && status?.error["message"] && (
-          <div className="text-red-500 text-xs mt-1">
-            {status?.error["message"]}
-          </div>
+          <div className="text-red-400 text-xs">{status?.error["message"]}</div>
         )}
       </div>
       <div className="flex flex-col gap-2">
         {!status?.success && status?.error["server"] && (
-          <div className="text-red-500 text-xs">{status?.error["server"]}</div>
+          <div className="text-red-400 text-xs">{status?.error["server"]}</div>
         )}
         <button
-          className={`bg-white text-black w-full rounded-md py-2 flex items-center justify-center gap-2 cursor-pointer`}
+          disabled={isLoading}
+          className="h-11.5 w-full rounded-[10px] bg-neutral-50 text-neutral-950 text-[15px] font-medium flex items-center justify-center gap-2 cursor-pointer hover:bg-neutral-200 transition-colors disabled:opacity-70 disabled:cursor-wait"
         >
           <LuSend />
-          <span>Send Inquiry</span>
+          <span>{isLoading ? "Sending…" : "Send Inquiry"}</span>
         </button>
       </div>
     </form>

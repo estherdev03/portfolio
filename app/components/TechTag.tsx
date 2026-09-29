@@ -9,8 +9,8 @@ const TechTag = ({
   return (
     <div
       className={
-        " w-fit h-6 flex items-center bg-neutral-800 text-neutral-300 text-xs px-4 rounded-md " +
-        classname
+        "w-fit h-6.5 flex items-center border border-neutral-800 bg-[#141414] text-neutral-300 text-xs px-2.5 rounded-md " +
+        (classname ?? "")
       }
     >
       {children}

@@ -1,5 +1,6 @@
 import { IoCompassOutline, IoShieldCheckmarkOutline } from "react-icons/io5";
 import Container from "./Container";
+import SectionHeading from "./SectionHeading";
 import PrincipleCard from "./PrincipleCard";
 import { LuBookOpen, LuSparkles, LuZap } from "react-icons/lu";
 import TechTag from "./TechTag";
@@ -17,32 +18,32 @@ const Principles = () => {
 
   const cloudTechTag = (
     <>
-      <TechTag classname=" border border-neutral-700/80">Amazon ECS</TechTag>
-      <TechTag classname=" border border-neutral-700/80">AWS Lambda</TechTag>
-      <TechTag classname=" border border-neutral-700/80">S3 & DynamoDB</TechTag>
-      <TechTag classname=" border border-neutral-700/80">IAM & VPC</TechTag>
+      <TechTag>Amazon ECS</TechTag>
+      <TechTag>AWS Lambda</TechTag>
+      <TechTag>S3 & DynamoDB</TechTag>
+      <TechTag>IAM & VPC</TechTag>
     </>
   );
   const architectTechTag = (
     <>
-      <TechTag classname=" border border-neutral-700/80">
+      <TechTag>
         Raft Consensus
       </TechTag>
-      <TechTag classname=" border border-neutral-700/80">CAP Theorem</TechTag>
-      <TechTag classname=" border border-neutral-700/80">Data Sharding</TechTag>
-      <TechTag classname=" border border-neutral-700/80">Kafka / SQS</TechTag>
+      <TechTag>CAP Theorem</TechTag>
+      <TechTag>Data Sharding</TechTag>
+      <TechTag>Kafka / SQS</TechTag>
     </>
   );
   const engineerTechTag = (
     <>
-      <TechTag classname=" border border-neutral-700/80">
+      <TechTag>
         Domain-Driven Design
       </TechTag>
-      <TechTag classname=" border border-neutral-700/80">Microservices</TechTag>
-      <TechTag classname=" border border-neutral-700/80">
+      <TechTag>Microservices</TechTag>
+      <TechTag>
         gRPC / Protobuf
       </TechTag>
-      <TechTag classname=" border border-neutral-700/80">
+      <TechTag>
         Resilience Patterns
       </TechTag>
     </>
@@ -50,15 +51,11 @@ const Principles = () => {
 
   return (
     <Container id="principles">
-      <div className="w-3/5">
-        <div className="capitalize text-5xl font-semibold mb-2">
-          How I approach software engineering
-        </div>
-        <div className="font-light">
-          Core principles I prioritize when writing code, reviewing pull
-          requests, and designing systems.
-        </div>
-        <div className=" grid grid-cols-2 gap-4 mt-10  border-b border-neutral-800/80 pb-10">
+      <SectionHeading
+        eyebrow="04 / Principles"
+        title="How I approach software engineering"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <PrincipleCard
             icon={robustIcon}
             header="Robustness"
@@ -88,26 +85,26 @@ const Principles = () => {
             description="As an aspiring software engineer, my greatest strength is my eagerness to dive deep into unfamiliar frameworks, read source code, and build working systems from scratch."
           />
         </div>
-        <div className=" flex flex-col gap-6">
-          <div className=" flex items-center justify-between pt-10">
-            <div className="flex flex-col">
-              <div className=" flex items-center gap-2">
-                <IoCompassOutline className=" text-2xl" />
-                <div className="text-2xl font-semibold">
-                  Active Self-Directed Learning
-                </div>
-              </div>
-              <div className=" font-light text-sm pt-1">
-                Independent study in cloud infrastructure, distributed systems,
-                and software engineering.
+      <div className="flex flex-col gap-5 pt-8 border-t border-neutral-900">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2.5">
+              <IoCompassOutline className="shrink-0 text-[22px]" />
+              <div className="text-[22px] font-semibold tracking-[-0.02em]">
+                Active Self-Directed Learning
               </div>
             </div>
-            <div className=" inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-300 text-xs font-semibold w-fit">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-              <div>Active Study</div>
+            <div className="text-sm font-light text-neutral-400">
+              Independent study in cloud infrastructure, distributed systems,
+              and software engineering.
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-700 text-emerald-300 text-xs font-semibold w-fit">
+            <span className="w-1.75 h-1.75 rounded-full bg-emerald-500 shrink-0"></span>
+            <div>Active Study</div>
+          </div>
+        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <SelfLearningCard
               icon={<IoMdCloudOutline className=" text-sky-300" />}
               headerClassname=" border bg-sky-950/80 border-sky-800 text-sky-200"
@@ -132,7 +129,6 @@ const Principles = () => {
               description="Applying Domain-Driven Design (DDD), clean architecture, high-speed gRPC/Protobuf APIs, and resilience mechanisms."
               techTags={engineerTechTag}
             />
-          </div>
         </div>
       </div>
     </Container>
