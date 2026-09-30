@@ -265,7 +265,7 @@ const Projects = () => {
               practice of isolating AI reasoning from auditable deterministic
               business logic.`,
       github_url: "https://github.com/estherdev03/MaplePath",
-      demo_url: "",
+      demo_url: "https://maple-path-black.vercel.app",
     },
     pomodoro: {
       main_tag: "Backend & Security",
@@ -419,7 +419,7 @@ const Projects = () => {
               orchestration, hybrid search (BM25 + pgvector + Cohere), and
               deterministic CRS scoring"
             githubRepo="https://github.com/estherdev03/MaplePath"
-            demoUrl="#"
+            demoUrl="https://maple-path-black.vercel.app"
             detail="An intelligent, auditable immigration assistant for Canada's
           Express Entry skilled immigration system. Converts applicant natural
           language into validated profile schemas, retrieves and classifies NOC
