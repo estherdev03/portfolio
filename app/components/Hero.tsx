@@ -111,12 +111,11 @@ const Hero = () => {
             </div>
           </div>
           <p className="m-0 text-neutral-400 text-[clamp(15px,1.4vw,17px)] leading-[1.7] text-pretty text-justify">
-            I&apos;m a third-year Computer Science student with a strong
+            I&apos;m a fourth-year Computer Science student with a strong
             foundation in data structures, algorithms, and web systems. I care
             deeply about writing clean, typed, and well-tested code that scales
             predictably. When I&apos;m not coding, you can find me practicing
-            LeetCode patterns, contributing to student hackathons, or reading
-            engineering postmortems.
+            LeetCode patterns or reading engineering postmortems.
           </p>
           <div className="flex flex-wrap gap-2.5">
             <div className="flex items-center gap-2 px-3.5 py-1.75 bg-neutral-800/60 border border-[#333] rounded-lg text-[13px] text-neutral-400 max-w-full">

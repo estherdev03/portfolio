@@ -37,8 +37,6 @@ const ProjectCard = ({
   const projectOrder = Object.values(ProjectName);
   const position = `0${projectOrder.indexOf(id) + 1} / 0${projectOrder.length}`;
 
-  console.log(githubRepo);
-
   return (
     <article className="border border-neutral-800 bg-[#0f0f0f] rounded-[18px] overflow-hidden transition-colors hover:border-[#3a3a3a]">
       <div className="px-[clamp(20px,3.2vw,40px)] pt-[clamp(22px,3.2vw,40px)] pb-[clamp(22px,3vw,32px)] flex flex-col gap-5.5">

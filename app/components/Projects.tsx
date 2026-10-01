@@ -56,16 +56,16 @@ const Projects = () => {
   const maplePathBenchmark = (
     <>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>516 NOC Unit Groups</div>
+        <div>Hybrid RAG Index</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>NDCG@10 · 4 Pipelines</div>
+        <div>Retrieval Benchmark</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>186 pytest Tests</div>
+        <div>Automated Suite</div>
       </div>
     </>
   );
@@ -90,7 +90,8 @@ const Projects = () => {
       </li>
       <li>
         Built reactive Next.js 16 frontend with Zustand state store, React Hook
-        Form, and Zod client & server schema validation.
+        Form + Zod client validation, backed by class-validator DTOs on the
+        server.
       </li>
       <li>
         Deployed distributed production architecture with frontend hosted on
@@ -116,16 +117,16 @@ const Projects = () => {
   const pomodoroBenchmark = (
     <>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>15 REST Endpoints</div>
+        <div>NestJS API</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>httpOnly Cookie Proxy</div>
+        <div>Next.js BFF Layer</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>25 / 5 / 15 min</div>
+        <div>Session Lifecycle</div>
       </div>
     </>
   );
@@ -173,16 +174,16 @@ const Projects = () => {
   const canvaBenchmark = (
     <>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>Drag · Resize · Rotate</div>
+        <div>Canvas Editor</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>6 Mongoose Models</div>
+        <div>MongoDB Schema</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 Benchmark</div>
-        <div>Retrieval Eval</div>
+        <div>PNG Export</div>
+        <div>html-to-image</div>
       </div>
     </>
   );
@@ -216,11 +217,11 @@ const Projects = () => {
       category: (
         <>
           <div className="stat-tile">
-            <div>NDCG@10 Benchmark</div>
-            <div>Retrieval Eval</div>
+            <div>BM25 + pgvector + RRF</div>
+            <div>Hybrid Retrieval</div>
           </div>
           <div className="stat-tile">
-            <div>LangGraph State</div>
+            <div>7-Node LangGraph</div>
             <div>Orchestration</div>
           </div>
           <div className="stat-tile">
@@ -322,7 +323,7 @@ const Projects = () => {
           </li>
         </>
       ),
-      testing: `Controller unit tests and integration tests in NestJS using Jest (app.controller.spec.ts), paired with strict Zod validation on all API payloads.`,
+      testing: `Jest unit and e2e harness scaffolded for every NestJS module (auth, users, pomodoro-session), with a global ValidationPipe enforcing class-validator DTOs on all API payloads and Zod schemas validating auth forms on the client.`,
       takeaway: ` Deepened proficiency in NestJS dependency injection patterns, enterprise auth protocols (TOTP, OAuth2, JWT), and deploying full-stack containerized applications to cloud platforms.`,
       github_url: "https://github.com/estherdev03/pomodoro-app",
       demo_url: "https://pomodoro-murex-beta.vercel.app",
@@ -330,7 +331,7 @@ const Projects = () => {
     canva_clone: {
       main_tag: "Full Stack & Graphics",
       secondary_tag: "Live Interactive App",
-      title: "Live Interactive App",
+      title: "Canva Clone (MERN Canva)",
       description: `Full-stack browser graphic design tool with multi-layer canvas editor, Cloudinary cloud asset storage & Google OAuth`,
       techTags: (
         <>
@@ -348,7 +349,7 @@ const Projects = () => {
       category: (
         <>
           <div className="stat-tile">
-            <div>Multi-Layer HTML5</div>
+            <div>Z-Indexed DOM Layers</div>
             <div>Canvas State</div>
           </div>
           <div className="stat-tile">

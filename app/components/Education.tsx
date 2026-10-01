@@ -9,7 +9,10 @@ const COURSEWORK = [
   {
     group: "Core Computer Science",
     items: [
-      { code: "CPSC 331", name: "Data Structures, Algorithms & Their Analysis" },
+      {
+        code: "CPSC 331",
+        name: "Data Structures, Algorithms & Their Analysis",
+      },
       { code: "CPSC 413", name: "Design & Analysis of Algorithms" },
       { code: "CPSC 351", name: "Theoretical Foundations of Computer Science" },
       { code: "CPSC 449", name: "Programming Paradigms" },
@@ -19,9 +22,9 @@ const COURSEWORK = [
     group: "Systems & Applications",
     items: [
       { code: "CPSC 457", name: "Principles of Operating Systems" },
-      { code: "CPSC 441", name: "Computer Networks" },
       { code: "CPSC 471", name: "Database Management Systems" },
-      { code: "SENG 300", name: "Introduction to Software Engineering" },
+      { code: "CPSC 526", name: "Network Systems Security" },
+      { code: "CPSC 544", name: "Machine Learning" },
     ],
   },
 ];
@@ -39,7 +42,9 @@ const Education = () => {
             <div className="text-[17px] text-neutral-200">
               Bachelor of Science in Computer Science
             </div>
-            <div className="text-[15px] text-neutral-400">Minor in Mathematics</div>
+            <div className="text-[15px] text-neutral-400">
+              Minor in Mathematics
+            </div>
           </div>
           <div className="flex flex-col gap-2 text-sm">
             <div className="flex items-center gap-2 text-neutral-200">
@@ -59,11 +64,15 @@ const Education = () => {
           </div>
           <div className="flex items-center gap-2.5 text-[15px]">
             <FaRegCircleCheck className="text-green-400 text-base" />
-            <div>President Entrance Award</div>
+            <div>President&apos;s Admission Scholarship</div>
           </div>
           <div className="flex items-center gap-2.5 text-[15px]">
             <FaRegCircleCheck className="text-green-400 text-base" />
-            <div>Dean&apos;s Honors List</div>
+            <div>Dean&apos;s Honors List (2023 - 2025)</div>
+          </div>
+          <div className="flex items-center gap-2.5 text-[15px]">
+            <FaRegCircleCheck className="text-green-400 text-base" />
+            <div>Weeratne Memorial Scholarship</div>
           </div>
         </div>
         <div className="p-[clamp(20px,3vw,32px)] flex flex-col gap-4">
