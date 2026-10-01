@@ -99,7 +99,7 @@ const ResumeModal = ({ closeModal }: { closeModal: () => void }) => {
           <div className="flex items-center gap-2.5 min-w-0">
             <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400"></span>
             <span className="text-sm font-medium text-neutral-50 truncate">
-              Esther_Tran_Resume
+              Esther Tran&apos;s Resume
             </span>
           </div>
           <div className="flex items-center gap-2">
