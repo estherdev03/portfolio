@@ -4,6 +4,7 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 import { useEffect, useState } from "react";
+import ResumeModal from "./ResumeModal";
 
 const NavLinks = [
   "About",
@@ -18,6 +19,7 @@ const NavBar = () => {
   const [activeSection, setActiveSection] = useState("about");
   const [isScrolling, setIsScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showResume, setShowResume] = useState(false);
 
   useEffect(() => {
     // Bind handleScroll
@@ -106,7 +108,7 @@ const NavBar = () => {
           })}
         </nav>
         <div className="flex items-center gap-2">
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={() => setShowResume(true)}>
             <div className="bg-neutral-50 text-neutral-950 px-3.5 py-1.75 rounded-lg flex items-center gap-2 text-sm font-medium hover:bg-neutral-200 transition-colors">
               <IoNewspaperOutline className="text-base" />
               Resume
@@ -137,6 +139,7 @@ const NavBar = () => {
           })}
         </div>
       )}
+      {showResume && <ResumeModal closeModal={() => setShowResume(false)} />}
     </header>
   );
 };

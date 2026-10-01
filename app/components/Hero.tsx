@@ -9,6 +9,7 @@ import {
 } from "react-icons/io5";
 import { MdOutlineMailOutline, MdOutlineSchool } from "react-icons/md";
 import { RiGithubLine } from "react-icons/ri";
+import ResumeModal from "./ResumeModal";
 
 const COMMITS = [
   { hash: "a1f3c9e", type: "fix", message: "off-by-one error (again)" },
@@ -76,6 +77,7 @@ const TerminalCard = () => {
 };
 
 const Hero = () => {
+  const [showResume, setShowResume] = useState(false);
   const projectNavigateHandler = () => {
     document.getElementById("projects")?.scrollIntoView({
       behavior: "smooth",
@@ -137,7 +139,10 @@ const Hero = () => {
               <span>Explore projects</span>
               <IoArrowDownOutline />
             </div>
-            <div className="flex items-center gap-2 px-5 py-2.5 text-neutral-50 rounded-[10px] text-[15px] font-medium border border-neutral-700 cursor-pointer hover:bg-neutral-900 transition-colors">
+            <div
+              className="flex items-center gap-2 px-5 py-2.5 text-neutral-50 rounded-[10px] text-[15px] font-medium border border-neutral-700 cursor-pointer hover:bg-neutral-900 transition-colors"
+              onClick={() => setShowResume(true)}
+            >
               <IoNewspaperOutline /> <span>View Resume</span>
             </div>
             <div
@@ -156,24 +161,25 @@ const Hero = () => {
               <RiGithubLine className="text-[17px]" />
               estherdev03
             </Link>
-            <Link
+            {/* <Link
               href="#"
               className="flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
             >
               <FiLinkedin className="text-[17px]" />
               LinkedIn
-            </Link>
+            </Link> */}
             <Link
-              href="mailto:esthertrandev@gmail.com"
+              href="mailto:thimytuyen.tran@ucalgary.ca"
               className="flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-50 transition-colors break-all"
             >
               <MdOutlineMailOutline className="shrink-0 text-[17px]" />
-              esthertrandev@gmail.com
+              thimytuyen.tran@ucalgary.ca
             </Link>
           </div>
         </div>
         <TerminalCard />
       </div>
+      {showResume && <ResumeModal closeModal={() => setShowResume(false)} />}
     </section>
   );
 };

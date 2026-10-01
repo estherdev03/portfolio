@@ -64,11 +64,11 @@ const Education = () => {
           </div>
           <div className="flex items-center gap-2.5 text-[15px]">
             <FaRegCircleCheck className="text-green-400 text-base" />
-            <div>President&apos;s Admission Scholarship</div>
+            <div>Dean&apos;s Honors List (2023 - 2025)</div>
           </div>
           <div className="flex items-center gap-2.5 text-[15px]">
             <FaRegCircleCheck className="text-green-400 text-base" />
-            <div>Dean&apos;s Honors List (2023 - 2025)</div>
+            <div>President&apos;s Admission Scholarship</div>
           </div>
           <div className="flex items-center gap-2.5 text-[15px]">
             <FaRegCircleCheck className="text-green-400 text-base" />
