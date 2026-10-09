@@ -56,16 +56,16 @@ const Projects = () => {
   const maplePathBenchmark = (
     <>
       <div className="highlight-tile">
-        <div>516 NOC Unit Groups</div>
-        <div>Hybrid RAG Index</div>
+        <div>NDCG@10 Benchmark</div>
+        <div>Retrieval eval</div>
       </div>
       <div className="highlight-tile">
-        <div>NDCG@10 · 4 Pipelines</div>
-        <div>Retrieval Benchmark</div>
+        <div>LangGraph State</div>
+        <div>Orchestration</div>
       </div>
       <div className="highlight-tile">
-        <div>186 pytest Tests</div>
-        <div>Automated Suite</div>
+        <div>100% Auditable CRS</div>
+        <div>Scoring engine</div>
       </div>
     </>
   );

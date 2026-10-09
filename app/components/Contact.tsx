@@ -83,8 +83,8 @@ const Contact = () => {
                 <div className="flex items-start gap-2.5 text-sm text-neutral-300 leading-normal">
                   <IoLocationOutline className="shrink-0 text-[17px] mt-px" />
                   <div>
-                    San Francisco Bay Area, CA (Authorized to work in the US,
-                    open to relocate for summer/fall)
+                    Calgary, Alberta - open to remote work and relocation for
+                    internships.
                   </div>
                 </div>
               </div>
