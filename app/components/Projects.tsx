@@ -383,7 +383,7 @@ const Projects = () => {
       testing: `Manual end-to-end validation of OAuth redirection flows, canvas element boundary collisions, and export rendering fidelity across different browser viewports.`,
       takeaway: `Gained extensive experience in state management for graphical canvas interfaces, third-party cloud media SDK integrations, and modern full-stack JavaScript architectures.`,
       github_url: "https://github.com/estherdev03/mern-canva",
-      demo_url: "https://mern-canva-navy.vercel.app",
+      demo_url: "https://artboard-navy.vercel.app",
     },
   };
 
@@ -455,7 +455,7 @@ const Projects = () => {
             title="Canva Clone (MERN Canva)"
             description="Full-stack browser graphic design tool with multi-layer canvas editor, Cloudinary cloud asset storage & Google OAuth"
             githubRepo="https://github.com/estherdev03/mern-canva"
-            demoUrl="https://mern-canva-navy.vercel.app"
+            demoUrl="https://artboard-navy.vercel.app"
             detail="An interactive full-stack graphic design platform inspired by Canva. Features a rich visual canvas workspace for composing multi-element graphics with custom text, geometric shapes, and cloud-stored images, alongside template browsing and instant client-side image rendering export."
             features={canvaFeatures}
             techtags={canvaTechTags}

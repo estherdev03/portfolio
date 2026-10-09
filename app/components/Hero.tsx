@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { FiLinkedin } from "react-icons/fi";
+
 import {
   IoArrowDownOutline,
   IoLocationOutline,
@@ -123,7 +123,7 @@ const Hero = () => {
             <div className="flex items-center gap-2 px-3.5 py-1.75 bg-neutral-800/60 border border-[#333] rounded-lg text-[13px] text-neutral-400 max-w-full">
               <MdOutlineSchool className="shrink-0 text-base text-neutral-300" />
               <span>
-                University of Calgary, Calgary - B.Sc Computer Science
+                University of Calgary, Calgary - B.Sc. Computer Science
               </span>
             </div>
             <div className="flex items-center gap-2 px-3.5 py-1.75 bg-neutral-800/60 border border-[#333] rounded-lg text-[13px] text-neutral-400 max-w-full">

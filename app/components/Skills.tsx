@@ -21,66 +21,54 @@ const Skills = () => {
     <Container id="skills">
       <SectionHeading eyebrow="02 / Skills" title="Technical Skills" />
       <div className="flex flex-wrap justify-center gap-2.5">
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <TypescriptIcon />
-            </div>
-            <span className="text-xs text-neutral-400">TypeScript</span>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <TypescriptIcon />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <Javascript />
-            </div>
-            <span className="text-xs text-neutral-400">JavaScript</span>
+          <span className="text-xs text-neutral-400">TypeScript</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <Javascript />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <Go />
-            </div>
-            <span className="text-xs text-neutral-400">Go</span>
+          <span className="text-xs text-neutral-400">JavaScript</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <Python />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <Python />
-            </div>
-            <span className="text-xs text-neutral-400">Python</span>
+          <span className="text-xs text-neutral-400">Python</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <Nestjs />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <Java />
-            </div>
-            <span className="text-xs text-neutral-400">Java</span>
+          <span className="text-xs text-neutral-400">NestJS</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <FastapiIcon />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <Nestjs />
-            </div>
-            <span className="text-xs text-neutral-400">NestJS</span>
+          <span className="text-xs text-neutral-400">FastAPI</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <NodejsIcon />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <FastapiIcon />
-            </div>
-            <span className="text-xs text-neutral-400">FastAPI</span>
+          <span className="text-xs text-neutral-400">Node.js</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <_React />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <NodejsIcon />
-            </div>
-            <span className="text-xs text-neutral-400">Node.js</span>
+          <span className="text-xs text-neutral-400">React</span>
+        </div>
+        <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
+          <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
+            <DockerIcon />
           </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <_React />
-            </div>
-            <span className="text-xs text-neutral-400">React</span>
-          </div>
-          <div className="w-22 flex flex-col items-center justify-center gap-2.5 px-2 py-4.5 border border-neutral-900 bg-[#0d0d0d] rounded-xl transition-colors hover:border-neutral-700 hover:bg-[#141414]">
-            <div className="flex h-9 w-9 items-center justify-center text-4xl leading-none [&>svg]:block">
-              <DockerIcon />
-            </div>
-            <span className="text-xs text-neutral-400">Docker</span>
-          </div>
+          <span className="text-xs text-neutral-400">Docker</span>
+        </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="border border-neutral-800 bg-[#111] p-[clamp(20px,2.6vw,28px)] rounded-[14px] flex flex-col gap-5">
