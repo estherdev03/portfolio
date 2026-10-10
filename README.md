@@ -2,9 +2,7 @@
 
 My personal software engineering portfolio, built with Next.js 16, React 19, and Tailwind CSS v4.
 
-**Live site:** [portfolio-dusky-three-hruyf8uw1q.vercel.app](https://portfolio-dusky-three-hruyf8uw1q.vercel.app)
-
-## Sections
+**Live site:** [esthertran.dev](https://esthertran.dev)
 
 The site is a single page (`app/page.tsx`) made up of these sections:
 
@@ -14,7 +12,7 @@ The site is a single page (`app/page.tsx`) made up of these sections:
 - **Projects**: featured projects with GitHub and live demo links, plus a detail modal for each one
   - [MaplePath AI](https://github.com/estherdev03/MaplePath) ([demo](https://maple-path-black.vercel.app))
   - [Pomodoro App](https://github.com/estherdev03/pomodoro-app) ([demo](https://pomodoro-murex-beta.vercel.app))
-  - [Canva Clone (MERN Canva)](https://github.com/estherdev03/mern-canva) ([demo](https://mern-canva-navy.vercel.app))
+  - [Canva Clone (MERN Canva)](https://github.com/estherdev03/mern-canva) ([demo](https://artboard-navy.vercel.app))
 - **Principles**: how I approach engineering work
 - **Contact**: a form that sends messages through [Formspree](https://formspree.io)
 
