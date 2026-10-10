@@ -10,6 +10,7 @@ import {
 import { MdOutlineMailOutline, MdOutlineSchool } from "react-icons/md";
 import { RiGithubLine } from "react-icons/ri";
 import ResumeModal from "./ResumeModal";
+import { FiLinkedin } from "react-icons/fi";
 
 const COMMITS = [
   { hash: "a1f3c9e", type: "fix", message: "off-by-one error (again)" },
@@ -161,13 +162,14 @@ const Hero = () => {
               <RiGithubLine className="text-[17px]" />
               estherdev03
             </Link>
-            {/* <Link
-              href="#"
+            <Link
+              href="https://www.linkedin.com/in/esthertran"
               className="flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
+              target="_blank"
             >
               <FiLinkedin className="text-[17px]" />
               LinkedIn
-            </Link> */}
+            </Link>
             <Link
               href="mailto:thimytuyen.tran@ucalgary.ca"
               className="flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-50 transition-colors break-all"

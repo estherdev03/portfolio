@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { IoMdArrowUp } from "react-icons/io";
-import { LuGithub } from "react-icons/lu";
+import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 
 const Footer = () => {
@@ -29,12 +29,13 @@ const Footer = () => {
           >
             <LuGithub />
           </Link>
-          {/* <Link
-            href={"#"}
+          <Link
+            href={"https://www.linkedin.com/in/esthertran"}
+            target="_blank"
             className="w-9.5 h-9.5 flex items-center justify-center rounded-lg text-lg text-neutral-400 cursor-pointer hover:bg-[#1a1a1a] hover:text-white transition-colors"
           >
             <LuLinkedin />
-          </Link> */}
+          </Link>
           <Link
             href={"mailto:thimytuyen.tran@ucalgary.ca"}
             className="w-9.5 h-9.5 flex items-center justify-center rounded-lg text-lg text-neutral-400 cursor-pointer hover:bg-[#1a1a1a] hover:text-white transition-colors"

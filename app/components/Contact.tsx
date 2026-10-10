@@ -92,7 +92,7 @@ const Contact = () => {
                 <div className="text-[11px] uppercase tracking-[0.08em] text-neutral-400">
                   Professional Networks
                 </div>
-                <div className="grid grid-cols-1 gap-2.5">
+                <div className="grid grid-cols-2 gap-2.5">
                   <Link
                     href={"https://github.com/estherdev03"}
                     target="_blank"
@@ -101,10 +101,14 @@ const Contact = () => {
                     <RiGithubLine />
                     <div>Github</div>
                   </Link>
-                  {/* <div className="h-10 flex items-center justify-center gap-2 border border-neutral-700 rounded-[9px] text-sm text-neutral-200 cursor-pointer hover:bg-neutral-900 hover:text-white transition-colors">
+                  <Link
+                    href={"https://www.linkedin.com/in/esthertran"}
+                    target="_blank"
+                    className="h-10 flex items-center justify-center gap-2 border border-neutral-700 rounded-[9px] text-sm text-neutral-200 cursor-pointer hover:bg-neutral-900 hover:text-white transition-colors"
+                  >
                     <FiLinkedin />
                     <div>LinkedIn</div>
-                  </div> */}
+                  </Link>
                 </div>
               </div>
             </div>
